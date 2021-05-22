@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:frases/core/app_images.dart';
 
-//repare que eu criei a pasta CORE e dentro dela coloquei a IMAGEM dentro de uma classe
-//dentro dessa classe tem STRING STATIC para apenas pegarmos as imagems e colocalar de forma mais facil !!
-
-//LEMBRE-SE DE IR NO PUBSPEC E COLOCAR E SETAR O ASSETS LA !!!
+//Scaffold = esqueleto(estrutura base)
+//appBar = conteudo abaixo de aonde fica a bateria, horario etc..(menu da parte de cima)
+//body = corpo
+//bottomNavigationBar = menu da parte debaixo
 
 void main() {
   runApp(MaterialApp(
     //debugShowCheckedModeBanner = tira a faixa de debug da tela !!
-    debugShowCheckedModeBanner: false,
-    title: 'Frases do dia',
-    home: Container(             
-        child: Image.asset(
-    AppImages.goku,
-    fit: BoxFit.fill,
+    debugShowCheckedModeBanner: false,    
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('Instagram'),
+        backgroundColor: Colors.purple,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Text('Conteúdo principal'),
+        ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.pink,
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Row(children: [
+            Text('Texto 1'),
+            Text('Texto 2'),
+            Text('Texto 3'),
+          ],),
         ),
       ),
+    ),
   ));
 }
 
